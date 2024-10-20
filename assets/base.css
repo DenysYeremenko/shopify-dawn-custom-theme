@@ -551,8 +551,9 @@ hr {
 }
 
 .full-unstyled-link {
+  text-align: center;
   text-decoration: none;
-  color: currentColor;
+  color: #3c3c3c;
   display: block;
 }
 
@@ -1181,6 +1182,13 @@ deferred-media {
 
 /* component-button */
 /* Button - default */
+.button {
+  width: 225px;
+}
+
+.collection__view-all .button {
+  color: #fff;
+}
 
 .button--secondary,
 .button--tertiary {
@@ -2497,6 +2505,8 @@ input[type="checkbox"] {
 
 .header__heading-link span {
   display: flex;
+  font-size: 32px;
+  color: #000;
 }
 
 .header__heading-link.link.link--text span span:first-child {
