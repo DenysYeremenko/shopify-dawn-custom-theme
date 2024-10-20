@@ -155,9 +155,7 @@
             {%- else -%}
   {% assign shop_parts = shop.name | split: ' ' %}
   <span class="h2">
-    {% for part in shop_parts %}
-      <span>{{ part }}</span>{% if forloop.last == false %} {% endif %}
-    {% endfor %}
+    {{ shop_parts | join: ' ' }}
   </span>
 {%- endif -%}
           </a>
