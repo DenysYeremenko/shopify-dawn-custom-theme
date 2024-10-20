@@ -57,6 +57,53 @@
         "show_text_below": false
       }
     },
+    "collection_list_hB3XMn": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_bPzYq4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fitness-wear"
+          }
+        },
+        "featured_collection_hg7eMG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shorts"
+          }
+        },
+        "featured_collection_KkgxLB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fitness-band"
+          }
+        },
+        "featured_collection_LFjxep": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "smart-watch"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_bPzYq4",
+        "featured_collection_hg7eMG",
+        "featured_collection_KkgxLB",
+        "featured_collection_LFjxep"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -88,6 +135,7 @@
   },
   "order": [
     "image_banner",
+    "collection_list_hB3XMn",
     "featured_collection"
   ]
 }
