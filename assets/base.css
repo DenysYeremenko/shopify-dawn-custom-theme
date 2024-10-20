@@ -2490,6 +2490,18 @@ input[type="checkbox"] {
   padding: 0.75rem;
   text-decoration: none;
   word-break: break-word;
+  text-transform: uppercase;
+  font-size: 32.0745px;
+  line-height: 32px;
+}
+
+.header__heading-link span {
+  display: flex;
+}
+
+.header__heading-link.link.link--text span span:first-child {
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .header__heading-link:hover .h2 {
