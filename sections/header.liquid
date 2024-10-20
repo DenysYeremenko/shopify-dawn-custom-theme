@@ -153,13 +153,13 @@
                 }}
               </div>
             {%- else -%}
-              {% assign shop_parts = shop.name | split: ' ' %}
-              <span class="h2">
-                {% for part in shop_parts %}
-                  <span>{{ part }}</span>{% if forloop.last == false %} {% endif %}
-                {% endfor %}
-              </span>
-            {%- endif -%}
+  {% assign shop_parts = shop.name | split: ' ' %}
+  <span class="h2">
+    {% for part in shop_parts %}
+      <span>{{ part }}</span>{% if forloop.last == false %} {% endif %}
+    {% endfor %}
+  </span>
+{%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
         </h1>
