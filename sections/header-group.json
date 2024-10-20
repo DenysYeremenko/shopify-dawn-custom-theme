@@ -16,10 +16,15 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
-          "settings": { "text": "Mid-Season Sale Up to 70% OFF.", "link": "" }
+          "settings": {
+            "text": "Mid-Season Sale Up to 70% OFF.",
+            "link": ""
+          }
         }
       },
-      "block_order": ["announcement-bar-0"],
+      "block_order": [
+        "announcement-bar-0"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "show_line_separator": true,
@@ -32,6 +37,9 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+
+      ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
@@ -50,5 +58,8 @@
       }
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
 }

@@ -12,25 +12,25 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "text_xF9EVK": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "<strong>DUMMY HEADING</strong>",
+            "heading_size": "h1"
           }
         },
-        "button": {
+        "text_c3gdQk": {
+          "type": "text",
+          "settings": {
+            "text": "Quisquemos sodales suscipit tortor ditaemcos condimentum de cosmo lacus",
+            "text_style": "body"
+          }
+        },
+        "buttons_f8Tcyj": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_label_1": "Shop Now",
+            "button_link_1": "",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -39,14 +39,15 @@
         }
       },
       "block_order": [
-        "text_xF9EVK",
         "heading",
-        "button"
+        "text_c3gdQk",
+        "buttons_f8Tcyj"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "image": "shopify://shop_images/IMAGE.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
