@@ -1,0 +1,71 @@
+{% schema %}
+{
+    "name": "Gallery",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Gallery",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}
+
+<section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
+    <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
+<div class="gallery-section">
+    <h1>{{ section.settings.title }}</h1>
+    <div class="gallery-grid">
+        {% for block in section.blocks %}
+            {% assign product = all_products[block.settings.product] %}
+            {% if product %}
+                <div class="gallery-item">
+                    <a href="{{ product.url }}">
+                        <img src="{{ product.featured_image | image_url: 'medium' }}" alt="{{ product.title }}" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}">
+                        <div class="gallery-item-title">{{ product.type }}</div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+</div>
+</section>
+
+<style>
+    .gallery-section {
+        padding: 20px;
+    }
+    .gallery-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .gallery-item {
+        flex: 1 1 calc(33.333% - 20px);
+        box-sizing: border-box;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+    }
+    .gallery-item-title {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+</style>
