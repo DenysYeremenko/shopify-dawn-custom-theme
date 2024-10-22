@@ -38,7 +38,11 @@
           }
         }
       },
-      "block_order": ["heading", "text_c3gdQk", "buttons_f8Tcyj"],
+      "block_order": [
+        "heading",
+        "text_c3gdQk",
+        "buttons_f8Tcyj"
+      ],
       "settings": {
         "image": "shopify://shop_images/IMAGE.png",
         "image_overlay_opacity": 0,
@@ -100,23 +104,6 @@
         "padding_bottom": 100
       }
     },
-    "gallery": {
-      "type": "gallery",
-      "blocks": {
-        "block1": {
-          "type": "product",
-          "settings": {
-            "product": "example-product"
-          }
-        }
-      },
-      "block_order": ["block1"],
-      "settings": {
-        "background_color": "#ffffff",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -143,6 +130,53 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "gallery": {
+      "type": "gallery",
+      "blocks": {
+        "product_MC9Wpr": {
+          "type": "product",
+          "settings": {
+            "product": "adidas-classic-backpack"
+          }
+        },
+        "product_bPJGKJ": {
+          "type": "product",
+          "settings": {
+            "product": "adidas-classic-backpack-legend-ink-multicolour"
+          }
+        },
+        "product_K8pLfU": {
+          "type": "product",
+          "settings": {
+            "product": "herschel-iona"
+          }
+        },
+        "product_HVTbnX": {
+          "type": "product",
+          "settings": {
+            "product": "asics-tiger-gel-lyte-v-30-years-of-gel-pack"
+          }
+        },
+        "product_fyCB4n": {
+          "type": "product",
+          "settings": {
+            "product": "converse-chuck-taylor-all-star-ii-hi"
+          }
+        }
+      },
+      "block_order": [
+        "product_MC9Wpr",
+        "product_bPJGKJ",
+        "product_K8pLfU",
+        "product_HVTbnX",
+        "product_fyCB4n"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
       }
     }
   },
