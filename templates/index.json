@@ -136,7 +136,9 @@
       "custom_css": [],
       "settings": {}
     },
-    "swiper-products": {}
+    "swiper-products": {
+      "type": "swiper-products"
+    }
   },
   "order": [
     "image_banner",
