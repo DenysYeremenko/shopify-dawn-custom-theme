@@ -470,6 +470,16 @@
   word-break: break-word;
 }
 
+.banner__buttons .button {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.banner__buttons .button:hover {
+  background-color: white;
+  color: #232323;
+  border: 1px solid #232323;
+}
+
 @media screen and (max-width: 749px) {
   .banner--content-align-mobile-right .banner__buttons--multiple {
     justify-content: flex-end;

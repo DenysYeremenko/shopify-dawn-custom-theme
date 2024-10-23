@@ -1,0 +1,158 @@
+{% comment %}
+    This section displays a product carousel using Swiper.js
+{% endcomment %}
+
+<section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
+    <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
+        <h2 style="text-align: center">New Arrivals</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for product in collections.all.products %}
+                    {% assign first_image = product.images[0] %}
+                    {% assign second_image = product.images[1] %}
+                    <div  class="swiper-slide" id="slide">
+                        <a href="{{ product.url }}" class="product-card">
+                            <div class="product-image" style="display: block; height: 278px; position: relative;">
+                                <img 
+                                    src="{{ first_image | image_url: 'medium' | prepend: '/cdn/shop/' }}" 
+                                    width="100%" 
+                                    height="100%" 
+                                    alt="{{ product.title }}" 
+                                    style="object-fit: contain;" 
+                                    class="default-image"
+                                />
+                                {% if product.images.size > 1 %}
+                                <img 
+                                    src="{{ second_image | image_url: 'medium' | prepend: '/cdn/shop/' }}" 
+                                    width="100%" 
+                                    height="100%" 
+                                    alt="{{ product.title }}" 
+                                    style="object-fit: contain;" 
+                                    class="hover-image"
+                                />
+                                {% endif %}
+                            </div>
+                            <div class="product-info" >
+                                <h3 class="product-title">
+                                   <div >{{ product.title }}</div> </h3>
+                                <p  class="product-price">{{ product.price | money }}</p>
+                                <form class="product-form" action="/cart/add" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                                    <button type="submit" class="button button--primary">Add To Cart</button>
+                                </form>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-next"> </div>
+            <div class="swiper-button-prev"> </div>
+        </div>
+    </div>
+</section>
+
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    });
+</script>
+
+<style>
+    .swiper-container {
+        overflow: hidden;
+    position: relative;        
+    }
+
+    .swiper-slide *{
+        text-align: left;
+        font-size: 18px;
+        line-height: 26px;
+        text-decoration: none;
+        color: #232323;
+    }
+    .swiper-slide {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .swiper-slide:hover {
+        transform: scale(0.95);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card {
+        text-align: center;
+        box-sizing: border-box;
+        height: auto;
+    }
+
+    .product-image {
+        position: relative;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .hover-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .product-image:hover .hover-image {
+        opacity: 1;
+    }
+
+    .product-image:hover .default-image {
+        opacity: 0;
+    }
+    .product-info {
+        padding: 15px 8px 20px 20px;
+    }
+
+    .product-title {
+    text-align: left;
+    margin: 0 0 15px 0;
+    height: 65px;
+    }
+
+    .product-price {
+        margin: 0 0 20px 0;
+    }
+
+    .product-card button {
+        width: 188px;
+        height: 41px;
+        background-color: white;
+        color: #000;
+        border: 1px solid #232323;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .product-card button:hover {
+        background-color: #232323;
+        color: white;
+    }
+    .product-card form {
+    display: flex;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        color: #000;
+        font-size: 24px; 
+    }
+
+</style>
